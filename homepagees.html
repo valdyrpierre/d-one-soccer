@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <title>D-One Soccer League</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <header>
+            <h1>D-One Soccer League</h1>
+            <img src="d-one-logo.jpg" alt="El logo de la liga estará aquí">
+            <nav>
+                <button><a href="rulesandlawses.html">Reglas y leyes</a></button>
+                <button><a href="teams.html">Equipos</a></button>
+                <button><a href="aboutuses.html">Sobre nosotros</a></button>
+                <button><a href="matches.html">Partidos</a></button>
+                <button><a href="standings.html">Clasificaciones</a></button>
+                <button><a href="staffes.html">Personal</a></button>
+                <button><a href="sponsorshipes.html">Patrocinio</a></button>
+                <button><a href="registeres.html">Registrar equipo</a></button>
+               
+                <!-- Selección de idioma -->
+                <button type="button">Idioma</button>
+                <select onchange="changeLanguage(this.value)">
+                    <option value="english">Inglés</option>
+                    <option value="spanish">Español</option>
+                    <option value="french">Francés</option>
+                </select>
+                <script>
+                    function changeLanguage(language) {
+                        if (language === 'english') {
+                            window.location.href = 'homepage.html';
+                        } else if (language === 'spanish') {
+                            window.location.href = 'homepagees.html';
+                        } else if (language === 'french') {
+                            window.location.href = 'homepagefr.html';
+                        }
+                    }
+                </script>
+            </nav>
+        </header>
+        <main>
+            <section>
+                <h2>Página principal</h2>
+                <p>¡Bienvenido a la página oficial de D-One Soccer League!</p>
+                <img src="Homeoage.jpg" alt="Imagen de patrocinio">
+            </section>
+
+            <section>
+                <h2>Patrocinio</h2>
+                <p>Ofrecemos varios paquetes de patrocinio adaptados a las necesidades de su negocio:</p>
+                <ul>
+                    <li><strong>Patrocinio en el sitio web:</strong> Anuncie su negocio en la página principal de nuestro sitio web por una tarifa de $10/día.</li>
+                    <li><strong>Patrocinio en redes sociales:</strong> Destaque su empresa en nuestras publicaciones de redes sociales por $10/publicación.</li>
+                    <li><strong>Paquete combinado:</strong> Combine el patrocinio en el sitio web y en redes sociales por $15/día (incluye una publicación en redes sociales).</li>
+                </ul>
+                <p>
+                    Patrocinar la D-One Soccer League es una excelente manera de promocionar su negocio mientras apoya a los jugadores y eventos de fútbol locales. 
+                    Para obtener más información o discutir oportunidades de patrocinio, complete nuestro formulario de patrocinio y un miembro de nuestro equipo se comunicará con usted.
+                </p>
+                <button><a href="https://www.surveymonkey.com/r/8DM2LCC">Formulario de patrocinio</a></button>
+            </section>
+        </main>
+        <footer>
+            <h2>Contáctenos</h2>
+            <p>Correo electrónico: <a href="mailto:d.one.soccer@gmail.com" target="_blank">d.one.soccer@gmail.com</a></p>
+            <p>Teléfono: 857-615-6121</p>
+            <div class="social-media">
+                <a href="https://www.facebook.com/D1SoccerLeague/" target="_blank">
+                    <img src="facebookdarkmode_logo.webp" alt="Logo de Facebook">
+                </a>
+                <a href="https://www.instagram.com/d1soccerleague/" target="_blank">
+                    <img src="instagramlogo.jpg" alt="Logo de Instagram">
+                </a>
+            </div>
+        </footer>
+    </body>
+</html>

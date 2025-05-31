@@ -1,0 +1,522 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: #000000; /* Black background */
+  color: #fff; /* White text for contrast */
+  padding: 20px;
+}
+
+/* Header Styling */
+header {
+  background: linear-gradient(90deg, #e7bb45, #d4a017); /* Gradient for a modern look */
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
+
+header img {
+  width: 150px;
+  height: auto;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* Navigation Bar */
+nav {
+  display: flex;
+  flex-wrap: wrap; /* Allows buttons to wrap to the next line on smaller screens */
+  justify-content: center;
+  background: #000000;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 10px;
+  gap: 10px; /* Adds spacing between buttons */
+}
+
+nav button {
+  background: #e7bb45;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  width: 35%; /* Set button width to 35% of the page */
+  max-width: 150px; /* Limit the maximum width */
+  text-align: center; /* Centers the text inside the button */
+}
+
+nav button a {
+  text-decoration: none;
+  color: #000;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: block;
+}
+
+nav button:hover {
+  background: #d4a017;
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+nav a {
+  color: #000000;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(90deg, #e7bb45, #d4a017);
+  color: #000;
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Buttons */
+button {
+  background: #e7bb45;
+  color: #000;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background: #d4a017;
+  transform: scale(1.05);
+}
+
+/* Card Layout */
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px 0;
+  color: #333;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Staff Card */
+.staff-card {
+  display: flex;
+  align-items: flex-start;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+  padding: 20px;
+  color: #333;
+}
+
+.staff-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-right: 20px;
+  object-fit: cover;
+  border: 2px solid #e7bb45;
+}
+
+.staff-info h2 {
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+  color: #000;
+}
+
+.staff-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.staff-info p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.details {
+  display: none;
+  margin-top: 10px;
+  background: #f9f9f9;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.details h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.details ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.details ul li {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+/* Image Styling */
+img {
+  max-width: 100%;
+  max-height: 600px;
+  height: auto;
+  display: block;
+  margin: 10px auto;
+  border-radius: 8px; /* Rounded corners for images */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 20px;
+  padding: 15px;
+  background: linear-gradient(90deg, #e7bb45, #d4a017);
+  color: #fff;
+}
+
+footer .social-media {
+  display: flex;
+  justify-content: center; /* Centers the icons horizontally */
+  align-items: center; /* Aligns the icons vertically */
+  margin-top: 10px;
+}
+
+footer .social-media img {
+  width: 50px; /* Increased size */
+  height: 50px; /* Increased size */
+  margin: 0 15px; /* Added more spacing between icons */
+  transition: transform 0.3s ease;
+}
+
+footer .social-media img:hover {
+  transform: scale(1.2); /* Slight zoom effect on hover */
+}
+
+footer p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #000;
+}
+
+/* Teams Page Styling */
+main.teams {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+main.teams h1 {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  color: #000;
+  font-size: 2rem;
+}
+
+main.teams ol {
+  list-style: none;
+  padding: 0;
+}
+
+main.teams ol li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  color: #000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+main.teams ol li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+main.teams ol li img {
+  width: 60px;
+  height: 60px;
+  margin-left: 1rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Payment Plan Page Styling */
+main.payment-plan {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color:  #e7bb45;
+}
+
+main.payment-plan h1 {
+  text-align: center;
+  color:  #e7bb45;
+  margin-bottom: 20px;
+}
+
+main.payment-plan p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  color: #555;
+}
+
+form fieldset {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+form legend {
+  font-weight: bold;
+  color:  #e7bb45;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+  color: #333;
+}
+
+form input, form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+form input[readonly] {
+  background-color: #e9ecef;
+}
+
+/* Call-to-Action Section */
+.cta {
+  text-align: center;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #000000;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.cta h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.cta p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.cta a {
+  color: #e7bb45;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cta a:hover {
+  text-decoration: underline;
+}
+
+/* About Us Page Styling */
+main {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+main h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #004080;
+}
+
+main p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.benefit {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.benefit h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #e7bb45;
+}
+
+.benefit p {
+    font-size: 1rem;
+    color: #333;
+}
+
+.benefit button {
+    background: #e7bb45;
+    color: #000;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.benefit button:hover {
+    background: #d4a017;
+    transform: scale(1.05);
+}
+
+/* Soccer Ball Rolling Effect */
+.rolling-ball {
+    position: absolute;
+    bottom: 20px; /* Adjust the position to make it visible */
+    left: 0;
+    width: 50px;
+    height: 50px;
+    background-image: url('soccer-ball.png'); /* Replace with the path to your soccer ball image */
+    background-size: cover;
+    border-radius: 50%;
+    animation: roll 5s linear infinite;
+}
+
+@keyframes roll {
+    0% {
+        transform: translateX(0) rotate(0deg);
+    }
+    100% {
+        transform: translateX(100vw) rotate(360deg);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  nav {
+    flex-direction: column; /* Stacks buttons vertically on smaller screens */
+    align-items: center;
+  }
+
+  nav button {
+    width: 100%; /* Makes buttons take full width on mobile */
+    max-width: none; /* Removes the max-width restriction */
+  }
+
+  nav a {
+    font-size: 1rem;
+    margin: 0 10px;
+  }
+
+  main.teams {
+    padding: 1rem;
+  }
+
+  main.teams h1 {
+    font-size: 1.5rem;
+  }
+}
