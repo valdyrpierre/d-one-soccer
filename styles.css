@@ -469,10 +469,11 @@ main p {
     transform: scale(1.05);
 }
 
-/* Table Styling */
+/* General Table Styling */
 table {
-    width: 50%; /* Keep the current size */
-    margin: 20px auto; /* Adjusted margin for better alignment */
+    width: 40%; /* Make the table responsive to fit the screen */
+    max-width: 800px; /* Limit the maximum width for larger screens */
+    margin: 20px auto; /* Center the table */
     border-collapse: collapse;
     background-color: #f8f9fa; /* Light background for contrast */
     border-radius: 10px; /* Rounded corners */
@@ -481,9 +482,10 @@ table {
 }
 
 th, td {
-    padding: 10px 15px; /* Keep padding consistent */
+    padding: 10px; /* Consistent padding */
     text-align: center;
     border-bottom: 1px solid #ddd; /* Subtle border between rows */
+    word-wrap: break-word; /* Ensure text wraps within cells */
 }
 
 th {
@@ -520,6 +522,7 @@ section h2 {
     text-transform: uppercase;
     letter-spacing: 1px; /* Added spacing for a modern look */
 }
+
 /* Responsive Design */
 @media (max-width: 768px) {
   /* Header */
@@ -564,10 +567,11 @@ section h2 {
   table {
     width: 100%; /* Full width on smaller screens */
     font-size: 0.8rem; /* Smaller font size for compactness */
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
   }
 
   th, td {
-    padding: 6px 8px; /* Reduce padding for table cells */
+    padding: 8px; /* Adjust padding for smaller screens */
   }
 
   td img {
