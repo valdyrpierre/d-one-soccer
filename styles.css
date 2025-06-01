@@ -471,40 +471,49 @@ main p {
 
 /* General Table Styling */
 table {
-    width: 40%; /* Make the table responsive to fit the screen */
-    max-width: 45%; /* Limit the maximum width for larger screens */
-    margin: 20px auto; /* Center the table */
+    width: 100%; /* Full width to fit the screen */
+    max-width: 100%; /* Ensure the table doesn't exceed the screen width */
+    margin: 10px auto; /* Center the table */
     border-collapse: collapse;
-    background-color: #000000; /* Light background for contrast */
-    border-radius: 10px; /* Rounded corners */
+    background-color: #000000; /* Black background for contrast */
+    border-radius: 8px; /* Rounded corners */
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 th, td {
-    padding: 10px; /* Consistent padding */
+    padding: 8px; /* Reduce padding for smaller screens */
     text-align: center;
     border-bottom: 1px solid #ddd; /* Subtle border between rows */
     word-wrap: break-word; /* Ensure text wraps within cells */
+    font-size: 0.9rem; /* Slightly smaller font size */
 }
 
 th {
     background-color: #343a40; /* Dark header background */
-    color: #d4a017; /* White text for contrast */
+    color: #d4a017; /* Gold text for contrast */
     font-weight: bold;
     text-transform: uppercase;
-    font-size: 0.9rem; /* Slightly smaller font size */
+    font-size: 0.8rem; /* Smaller font size for headers */
 }
 
 tr {
-    background-color: #000000; /* Light gray for alternating rows */
-    color: #d4a017;
+    background-color: #000000; /* Black background for rows */
+    color: #d4a017; /* Gold text for rows */
 }
 
+tr:nth-child(even) {
+    background-color: #1a1a1a; /* Dark gray for alternating rows */
+}
+
+tr:hover {
+    background-color: #2a2a2a; /* Slightly lighter gray on hover */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
 
 /* Team Logos in Table */
 td img {
-    width: 40px; /* Keep the logo size consistent */
+    width: 30px; /* Smaller logo size for compact design */
     height: auto;
     border-radius: 50%; /* Circular logos */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for logos */
@@ -513,86 +522,46 @@ td img {
 /* Section Headers */
 section h2 {
     text-align: center;
-    color: #343a40; /* Darker text color */
-    margin-top: 20px;
-    font-size: 1.5rem; /* Slightly smaller font size */
+    color: #d4a017; /* Gold text for headers */
+    margin-top: 10px;
+    font-size: 1.2rem; /* Smaller font size for section headers */
     text-transform: uppercase;
     letter-spacing: 1px; /* Added spacing for a modern look */
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  /* Header */
-  header h1 {
-    font-size: 1.8rem; /* Smaller font size for the header */
-    padding: 10px; /* Reduce padding for smaller screens */
-  }
+    table {
+        width: 100%; /* Full width on smaller screens */
+        font-size: 0.8rem; /* Smaller font size for compactness */
+        overflow-x: auto; /* Allow horizontal scrolling if needed */
+        display: block; /* Ensure the table is scrollable */
+    }
 
-  header img {
-    width: 100px; /* Smaller logo size */
-    margin-bottom: 5px;
-  }
+    th, td {
+        padding: 6px; /* Reduce padding for smaller screens */
+    }
 
-  /* Navigation Bar */
-  nav {
-    flex-direction: column; /* Stack buttons vertically */
-    align-items: center;
-    gap: 5px; /* Reduce spacing between buttons */
-  }
+    td img {
+        width: 25px; /* Smaller team logo size */
+    }
 
-  nav button {
-    width: 90%; /* Buttons take up most of the screen width */
-    max-width: none; /* Remove width restriction */
-    padding: 8px 10px; /* Adjust padding for smaller buttons */
-    font-size: 0.9rem; /* Slightly smaller font size */
-  }
+    section h2 {
+        font-size: 1rem; /* Smaller font size for section headers */
+        margin-top: 10px;
+    }
 
-  /* Hero Section */
-  .hero {
-    padding: 15px; /* Reduce padding for smaller screens */
-  }
+    footer {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
 
-  .hero h1 {
-    font-size: 2rem; /* Smaller font size for the hero title */
-  }
+    footer .social-media img {
+        width: 30px; /* Smaller social media icons */
+        height: 30px;
+        margin: 0 5px; /* Adjust spacing between icons */
+    }
 
-  .hero p {
-    font-size: 1rem; /* Adjust paragraph font size */
-  }
-
-  /* Table */
-  table {
-    width: 100%; /* Full width on smaller screens */
-    font-size: 0.8rem; /* Smaller font size for compactness */
-    overflow-x: auto; /* Allow horizontal scrolling if needed */
-  }
-
-  th, td {
-    padding: 8px; /* Adjust padding for smaller screens */
-  }
-
-  td img {
-    width: 30px; /* Smaller team logo size */
-  }
-
-  /* Section Headers */
-  section h2 {
-    font-size: 1.2rem; /* Smaller font size for section headers */
-    margin-top: 15px;
-  }
-
-  /* Footer */
-  footer {
-    padding: 10px; /* Reduce padding for smaller screens */
-  }
-
-  footer .social-media img {
-    width: 40px; /* Smaller social media icons */
-    height: 40px;
-    margin: 0 10px; /* Adjust spacing between icons */
-  }
-
-  footer p {
-    font-size: 0.9rem; /* Smaller font size for footer text */
-  }
+    footer p {
+        font-size: 0.8rem; /* Smaller font size for footer text */
+    }
 }
