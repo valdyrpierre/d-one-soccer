@@ -522,30 +522,76 @@ section h2 {
 }
 /* Responsive Design */
 @media (max-width: 768px) {
+  /* Header */
   header h1 {
-    font-size: 2rem;
+    font-size: 1.8rem; /* Smaller font size for the header */
+    padding: 10px; /* Reduce padding for smaller screens */
   }
 
+  header img {
+    width: 100px; /* Smaller logo size */
+    margin-bottom: 5px;
+  }
+
+  /* Navigation Bar */
   nav {
-    flex-direction: column; /* Stacks buttons vertically on smaller screens */
+    flex-direction: column; /* Stack buttons vertically */
     align-items: center;
+    gap: 5px; /* Reduce spacing between buttons */
   }
 
   nav button {
-    width: 100%; /* Makes buttons take full width on mobile */
-    max-width: none; /* Removes the max-width restriction */
+    width: 90%; /* Buttons take up most of the screen width */
+    max-width: none; /* Remove width restriction */
+    padding: 8px 10px; /* Adjust padding for smaller buttons */
+    font-size: 0.9rem; /* Slightly smaller font size */
   }
 
-  nav a {
-    font-size: 1rem;
-    margin: 0 10px;
+  /* Hero Section */
+  .hero {
+    padding: 15px; /* Reduce padding for smaller screens */
   }
 
-  main.teams {
-    padding: 1rem;
+  .hero h1 {
+    font-size: 2rem; /* Smaller font size for the hero title */
   }
 
-  main.teams h1 {
-    font-size: 1.5rem;
+  .hero p {
+    font-size: 1rem; /* Adjust paragraph font size */
+  }
+
+  /* Table */
+  table {
+    width: 100%; /* Full width on smaller screens */
+    font-size: 0.8rem; /* Smaller font size for compactness */
+  }
+
+  th, td {
+    padding: 6px 8px; /* Reduce padding for table cells */
+  }
+
+  td img {
+    width: 30px; /* Smaller team logo size */
+  }
+
+  /* Section Headers */
+  section h2 {
+    font-size: 1.2rem; /* Smaller font size for section headers */
+    margin-top: 15px;
+  }
+
+  /* Footer */
+  footer {
+    padding: 10px; /* Reduce padding for smaller screens */
+  }
+
+  footer .social-media img {
+    width: 40px; /* Smaller social media icons */
+    height: 40px;
+    margin: 0 10px; /* Adjust spacing between icons */
+  }
+
+  footer p {
+    font-size: 0.9rem; /* Smaller font size for footer text */
   }
 }
