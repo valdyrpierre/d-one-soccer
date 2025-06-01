@@ -472,10 +472,10 @@ main p {
 /* General Table Styling */
 table {
     width: 40%; /* Make the table responsive to fit the screen */
-    max-width: 800px; /* Limit the maximum width for larger screens */
+    max-width: 45%; /* Limit the maximum width for larger screens */
     margin: 20px auto; /* Center the table */
     border-collapse: collapse;
-    background-color: #f8f9fa; /* Light background for contrast */
+    background-color: #000000; /* Light background for contrast */
     border-radius: 10px; /* Rounded corners */
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
@@ -490,20 +490,17 @@ th, td {
 
 th {
     background-color: #343a40; /* Dark header background */
-    color: #fff; /* White text for contrast */
+    color: #d4a017; /* White text for contrast */
     font-weight: bold;
     text-transform: uppercase;
     font-size: 0.9rem; /* Slightly smaller font size */
 }
 
-tr:nth-child(even) {
-    background-color: #e9ecef; /* Light gray for alternating rows */
+tr {
+    background-color: #000000; /* Light gray for alternating rows */
+    color: #d4a017;
 }
 
-tr:hover {
-    background-color: #dee2e6; /* Slightly darker gray on hover */
-    transition: background-color 0.3s ease; /* Smooth hover effect */
-}
 
 /* Team Logos in Table */
 td img {
