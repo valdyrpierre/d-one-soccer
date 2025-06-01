@@ -469,28 +469,57 @@ main p {
     transform: scale(1.05);
 }
 
-/* Soccer Ball Rolling Effect */
-.rolling-ball {
-    position: absolute;
-    bottom: 20px; /* Adjust the position to make it visible */
-    left: 0;
-    width: 50px;
-    height: 50px;
-    background-image: url('soccer-ball.png'); /* Replace with the path to your soccer ball image */
-    background-size: cover;
-    border-radius: 50%;
-    animation: roll 5s linear infinite;
+/* Table Styling */
+table {
+    width: 50%; /* Keep the current size */
+    margin: 20px auto; /* Adjusted margin for better alignment */
+    border-collapse: collapse;
+    background-color: #f8f9fa; /* Light background for contrast */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
-@keyframes roll {
-    0% {
-        transform: translateX(0) rotate(0deg);
-    }
-    100% {
-        transform: translateX(100vw) rotate(360deg);
-    }
+th, td {
+    padding: 10px 15px; /* Keep padding consistent */
+    text-align: center;
+    border-bottom: 1px solid #ddd; /* Subtle border between rows */
 }
 
+th {
+    background-color: #343a40; /* Dark header background */
+    color: #fff; /* White text for contrast */
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem; /* Slightly smaller font size */
+}
+
+tr:nth-child(even) {
+    background-color: #e9ecef; /* Light gray for alternating rows */
+}
+
+tr:hover {
+    background-color: #dee2e6; /* Slightly darker gray on hover */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Team Logos in Table */
+td img {
+    width: 40px; /* Keep the logo size consistent */
+    height: auto;
+    border-radius: 50%; /* Circular logos */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for logos */
+}
+
+/* Section Headers */
+section h2 {
+    text-align: center;
+    color: #343a40; /* Darker text color */
+    margin-top: 20px;
+    font-size: 1.5rem; /* Slightly smaller font size */
+    text-transform: uppercase;
+    letter-spacing: 1px; /* Added spacing for a modern look */
+}
 /* Responsive Design */
 @media (max-width: 768px) {
   header h1 {
