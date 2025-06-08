@@ -63,7 +63,6 @@
     <script>
     // Helper to get logo file name from team name
     function getLogoFileName(teamname) {
-        // Map team names to logo file names (adjust as needed)
         const logos = {
             "soley leve": "soleyleve.jpg",
             "g city": "G-city.jpg",
@@ -84,20 +83,17 @@
         return logos[teamname] || "";
     }
 
-    fetch('http://localhost:3000/teams')
+    fetch('https://d-one-soccer.onrender.com/teams')
         .then(res => res.json())
         .then(teams => {
-            // Clear existing rows
             document.getElementById('groupA').innerHTML = '';
             document.getElementById('groupB').innerHTML = '';
 
-            // Sort teams by points descending, then by position
             const groupA = teams.filter(t => t.teamgroup === 'A')
                 .sort((a, b) => b.points - a.points || a.position - b.position);
             const groupB = teams.filter(t => t.teamgroup === 'B')
                 .sort((a, b) => b.points - a.points || a.position - b.position);
 
-            // Helper to create a row with logo
             function createRow(team) {
                 const logoFile = team.logo && team.logo.trim() !== "" ? team.logo : getLogoFileName(team.teamname);
                 const logoImg = logoFile ? `<img src="${logoFile}" alt="${team.teamname}" style="height:32px;">` : team.teamname;
@@ -124,6 +120,6 @@
             document.getElementById('groupA').innerHTML = '<tr><td colspan="8">Could not load standings.</td></tr>';
             document.getElementById('groupB').innerHTML = '<tr><td colspan="8">Could not load standings.</td></tr>';
         });
-    </script>
+</script>
 </body>
 </html>
