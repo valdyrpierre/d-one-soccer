@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <title>D-One Soccer League - Standings</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <header>
+        <nav>
+            <button><a href="rulesandlaws.html">Rules and Laws</a></button>
+            <button><a href="teams.html">Teams</a></button>
+            <button><a href="aboutus.html">About Us</a></button>
+            <button><a href="matches.html">Matches</a></button>
+            <button><a href="homepage.html">Home Page</a></button>
+            <button><a href="sponsorship.html">Sponsorship</a></button>
+            <button><a href="register.html">Register Team</a></button>
+        </nav>
+    </header>
+    <main>
+        <!-- Group A -->
+        <section>
+            <h2>Group A</h2>
+            <table>
+                <tr>
+                    <th>Position</th>
+                    <th>Team</th>
+                    <th>Played</th>
+                    <th style="color: green;">W</th>
+                    <th>D</th>
+                    <th style="color: red;">Lost</th>
+                    <th>GD</th>
+                    <th>Points</th>
+                </tr>
+                <tbody id="groupA">
+                    <!-- Group A standings will be loaded here -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Group B -->
+        <section>
+            <h2>Group B</h2>
+            <table>
+                <tr>
+                    <th>Position</th>
+                    <th>Team</th>
+                    <th>Played</th>
+                    <th style="color: green;">W</th>
+                    <th>D</th>
+                    <th style="color: red;">Lost</th>
+                    <th>GD</th>
+                    <th>Points</th>
+                </tr>
+                <tbody id="groupB">
+                    <!-- Group B standings will be loaded here -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script>
+    // Helper to get logo file name from team name
+    function getLogoFileName(teamname) {
+        // Map team names to logo file names (adjust as needed)
+        const logos = {
+            "soley leve": "soleyleve.jpg",
+            "g city": "G-city.jpg",
+            "unstoppable": "unstoppable.jpg",
+            "playerclubfoundation": "Playerclubfoundation.jpg",
+            "Balilfc": "Balilfc (1).jpg",
+            "Hulkfc": "Hulkfc.jpg",
+            "flatleyfc": "flatleyfc.jpg",
+            "Apanou": "Apanou.jpg",
+            "Sete-setembro": "Sete-setembro.jpg",
+            "Anationalpanthers": "Anationalpanthers.jpg",
+            "Cafedefogo": "Cafedefogo (1).jpg",
+            "Unstoppablfc": "Unstoppablfc.jpg",
+            "Partnersfootballclub": "Partnersfootballclub (1).jpg",
+            "Retesezi": "Retesezi.jpg",
+            "broctonfc": "broctonfc.webp"
+        };
+        return logos[teamname] || "";
+    }
+
+    fetch('http://localhost:3000/teams')
+        .then(res => res.json())
+        .then(teams => {
+            // Clear existing rows
+            document.getElementById('groupA').innerHTML = '';
+            document.getElementById('groupB').innerHTML = '';
+
+            // Sort teams by points descending, then by position
+            const groupA = teams.filter(t => t.teamgroup === 'A')
+                .sort((a, b) => b.points - a.points || a.position - b.position);
+            const groupB = teams.filter(t => t.teamgroup === 'B')
+                .sort((a, b) => b.points - a.points || a.position - b.position);
+
+            // Helper to create a row with logo
+            function createRow(team) {
+                const logoFile = team.logo && team.logo.trim() !== "" ? team.logo : getLogoFileName(team.teamname);
+                const logoImg = logoFile ? `<img src="${logoFile}" alt="${team.teamname}" style="height:32px;">` : team.teamname;
+                return `<tr>
+                    <td>${team.position}</td>
+                    <td>${logoImg}</td>
+                    <td>${team.played}</td>
+                    <td style="color: green;">${team.wins}</td>
+                    <td>${team.draws}</td>
+                    <td style="color: red;">${team.losses}</td>
+                    <td>${team.gd}</td>
+                    <td>${team.points}</td>
+                </tr>`;
+            }
+
+            groupA.forEach(team => {
+                document.getElementById('groupA').innerHTML += createRow(team);
+            });
+            groupB.forEach(team => {
+                document.getElementById('groupB').innerHTML += createRow(team);
+            });
+        })
+        .catch(() => {
+            document.getElementById('groupA').innerHTML = '<tr><td colspan="8">Could not load standings.</td></tr>';
+            document.getElementById('groupB').innerHTML = '<tr><td colspan="8">Could not load standings.</td></tr>';
+        });
+    </script>
+</body>
+</html>

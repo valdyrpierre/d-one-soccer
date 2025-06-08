@@ -1,0 +1,657 @@
+/* =========================
+   General Reset & Body
+   ========================= */
+
+/* Remove default margin/padding and set box-sizing for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set base font, background, and text color for the whole page */
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: #000000; /* Black background */
+  color: #fff; /* White text for contrast */
+  padding: 20px;
+}
+
+/* =========================
+   Header & Navigation
+   ========================= */
+
+/* Style the header with a gold gradient and center content */
+header {
+  background: linear-gradient(90deg, #e7bb45, #d4a017);
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Logo image in the header */
+header img {
+  width: 150px;
+  height: auto;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* Navigation bar styles: flex layout, background, spacing */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: #000000;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+/* Navigation buttons: gold background, rounded, responsive width */
+nav button {
+  background: #e7bb45;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  width: 35%;
+  max-width: 150px;
+  text-align: center;
+}
+
+/* Navigation links inside buttons */
+nav button a {
+  text-decoration: none;
+  color: #000;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: block;
+}
+
+/* Button hover effect */
+nav button:hover {
+  background: #d4a017;
+  transform: scale(1.05);
+}
+
+/* Navigation links (outside buttons) */
+nav a {
+  color: #000000;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Navigation link hover effect */
+nav a:hover {
+  color: #fff;
+}
+
+/* =========================
+   Hero Section
+   ========================= */
+
+/* Main hero/banner section with gold gradient */
+.hero {
+  background: linear-gradient(90deg, #e7bb45, #d4a017);
+  color: #000;
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* =========================
+   Buttons (General)
+   ========================= */
+
+/* General button styling for all buttons */
+button {
+  background: #e7bb45;
+  color: #000;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+/* Button hover effect */
+button:hover {
+  background: #d4a017;
+  transform: scale(1.05);
+}
+
+/* =========================
+   Card Layouts
+   ========================= */
+
+/* Generic card style for content blocks */
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px 0;
+  color: #333;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* =========================
+   Staff Card Layout
+   ========================= */
+
+/* Staff card: flex layout for photo/info */
+.staff-card {
+  display: flex;
+  align-items: flex-start;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+  padding: 20px;
+  color: #333;
+}
+
+/* Staff photo: circular, bordered */
+.staff-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-right: 20px;
+  object-fit: cover;
+  border: 2px solid #e7bb45;
+}
+
+/* Staff info section */
+.staff-info h2 {
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+  color: #000;
+}
+
+.staff-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.staff-info p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+/* Hidden details section for staff cards */
+.details {
+  display: none;
+  margin-top: 10px;
+  background: #f9f9f9;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.details h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.details ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.details ul li {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+/* =========================
+   Images (General)
+   ========================= */
+
+/* All images: responsive, rounded, shadow */
+img {
+  max-width: 100%;
+  max-height: 600px;
+  height: auto;
+  display: block;
+  margin: 10px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================
+   Footer
+   ========================= */
+
+/* Footer: gold gradient, centered text */
+footer {
+  text-align: center;
+  margin-top: 20px;
+  padding: 15px;
+  background: linear-gradient(90deg, #e7bb45, #d4a017);
+  color: #fff;
+}
+
+/* Social media icons in footer */
+footer .social-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+footer .social-media img {
+  width: 50px;
+  height: 50px;
+  margin: 0 15px;
+  transition: transform 0.3s ease;
+}
+
+footer .social-media img:hover {
+  transform: scale(1.2);
+}
+
+footer p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #000;
+}
+
+/* =========================
+   Teams Page
+   ========================= */
+
+/* Main container for teams page */
+main.teams {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+/* Teams page title */
+main.teams h1 {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  color: #000;
+  font-size: 2rem;
+}
+
+/* Teams list: remove default list style */
+main.teams ol {
+  list-style: none;
+  padding: 0;
+}
+
+/* Team list items: flex, styled cards */
+main.teams ol li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  color: #000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+main.teams ol li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Team logos in list */
+main.teams ol li img {
+  width: 60px;
+  height: 60px;
+  margin-left: 1rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* =========================
+   Payment Plan Page
+   ========================= */
+
+/* Main container for payment plan page */
+main.payment-plan {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color:  #e7bb45;
+}
+
+/* Payment plan title */
+main.payment-plan h1 {
+  text-align: center;
+  color:  #e7bb45;
+  margin-bottom: 20px;
+}
+
+/* Payment plan description */
+main.payment-plan p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Form fieldset styling */
+form fieldset {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+/* Form legend styling */
+form legend {
+  font-weight: bold;
+  color:  #e7bb45;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* Form label styling */
+form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+  color: #333;
+}
+
+/* Form input and select styling */
+form input, form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+/* Read-only input styling */
+form input[readonly] {
+  background-color: #e9ecef;
+}
+
+/* =========================
+   Call-to-Action Section
+   ========================= */
+
+/* CTA section: black background, white text */
+.cta {
+  text-align: center;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #000000;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.cta h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.cta p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.cta a {
+  color: #e7bb45;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cta a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   About Us Page
+   ========================= */
+
+/* Main container for about us and general pages */
+main {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+/* Section headings */
+main h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #004080;
+}
+
+/* Paragraphs in main */
+main p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* Benefit cards on about page */
+.benefit {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.benefit h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #e7bb45;
+}
+
+.benefit p {
+    font-size: 1rem;
+    color: #333;
+}
+
+.benefit button {
+    background: #e7bb45;
+    color: #000;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.benefit button:hover {
+    background: #d4a017;
+    transform: scale(1.05);
+}
+
+/* =========================
+   General Table Styling
+   ========================= */
+
+/* Table: full width, black background, rounded, shadow */
+table {
+    width: 100%;
+    max-width: 100%;
+    margin: 10px auto;
+    border-collapse: collapse;
+    background-color: #000000;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Table cells: padding, border, font size */
+th, td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    word-wrap: break-word;
+    font-size: 0.9rem;
+}
+
+/* Table headers: dark background, gold text */
+th {
+    background-color: #343a40;
+    color: #d4a017;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+/* Table rows: black background, gold text */
+tr {
+    background-color: #000000;
+    color: #d4a017;
+}
+
+/* Alternate row color for readability */
+tr:nth-child(even) {
+    background-color: #1a1a1a;
+}
+
+/* Row hover effect */
+tr:hover {
+    background-color: #2a2a2a;
+    transition: background-color 0.3s ease;
+}
+
+/* Team logos in tables: small, circular */
+td img {
+    width: 30px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================
+   Section Headers
+   ========================= */
+
+/* Section headers: gold, centered, uppercase */
+section h2 {
+    text-align: center;
+    color: #d4a017;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* =========================
+   Responsive Design
+   ========================= */
+
+/* Adjust layout and font sizes for smaller screens */
+@media (max-width: 768px) {
+    table {
+        width: 100%;
+        font-size: 0.8rem;
+        overflow-x: auto;
+        display: block;
+    }
+
+    th, td {
+        padding: 6px;
+    }
+
+    td img {
+        width: 25px;
+    }
+
+    section h2 {
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+
+    footer {
+        padding: 10px;
+    }
+
+    footer .social-media img {
+        width: 30px;
+        height: 30px;
+        margin: 0 5px;
+    }
+
+    footer p {
+        font-size: 0.8rem;
+    }
+}

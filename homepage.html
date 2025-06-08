@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <title>D-One Soccer League</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <header>
+            <h1>D-One Soccer League</h1>
+            <img src="d-one-logo.jpg" alt="League logo will be here">
+            <nav>
+                <button><a href="rulesandlaws.html">Rules and law</a></button>
+                <button><a href="teams.html">Teams</a></button>
+                <button><a href="aboutus.html">About Us</a></button>
+                <button><a href="matches.html">Matches</a></button>
+                <button><a href="standings.html">Standings</a></button>
+                <button><a href="staff.html">Staff</a></button>
+                <button><a href="sponsorship.html">Sponsorship</a></button>
+                <button><a href="register.html">Register Team</a></button>
+                <button><a href="adminlogin.html">Admin Login</a></button>
+               
+                <!-- Language selection dropdown -->
+                <button type="button">Language</button>
+                <select onchange="changeLanguage(this.value)">
+                    <option value="english">English</option>
+                    <option value="spanish">Spanish</option>
+                    <option value="french">French</option>
+                </select>
+                <script>
+                    function changeLanguage(language) {
+                        if (language === 'english') {
+                            window.location.href = 'homepage.html';
+                        } else if (language === 'spanish') {
+                            window.location.href = 'homepagees.html';
+                        } else if (language === 'french') {
+                            window.location.href = 'homepagefr.html';
+                        }
+                    }
+                </script>
+            </nav>
+        </header>
+        <main>
+            <section>
+                <h2>Home Page</h2>
+                <p>Welcome to D-One Soccer League's official page!</p>
+                <img src="Homeoage.jpg" alt="Sponsorship Image">
+            </section>
+
+            <section>
+                <h2>Sponsorship</h2>
+                <p>We offer various sponsorship packages tailored to meet your business needs:</p>
+                <ul>
+                    <li><strong>Website Sponsorship:</strong> Advertise your business on our website homepage for a fee of $10/day.</li>
+                    <li><strong>Social Media Sponsorship:</strong> Feature your company in our social media posts for $10/post.</li>
+                    <li><strong>Bundle Package:</strong> Combine website and social media sponsorship for $15/day (includes one social media post).</li>
+                </ul>
+                <p>
+                    Sponsoring the D-One Soccer League is a great way to promote your business while supporting local soccer players and events. 
+                    For more information or to discuss sponsorship opportunities, please fill out our sponsorship form, and a member of our team will reach out.
+                </p>
+                <button><a href="https://www.surveymonkey.com/r/8DM2LCC">Sponsorship Form</a></button>
+            </section>
+        </main>
+        <footer>
+            <h2>Contact Us</h2>
+            <p>Email: <a href="mailto:d.one.soccer@gmail.com" target="_blank">d.one.soccer@gmail.com</a></p>
+            <p>Phone: 857-615-6121</p>
+            <div class="social-media">
+                <a href="https://www.facebook.com/D1SoccerLeague/" target="_blank">
+                    <img src="facebookdarkmode_logo.webp" alt="Facebook Logo">
+                </a>
+                <a href="https://www.instagram.com/d1soccerleague/" target="_blank">
+                    <img src="instagramlogo.jpg" alt="Instagram Logo">
+                </a>
+            </div>
+        </footer>
+    </body>
+</html>
