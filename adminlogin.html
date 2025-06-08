@@ -28,7 +28,7 @@
 document.getElementById("loginForm").addEventListener("submit", function(event) {
     event.preventDefault();
     const userpin = document.getElementById("userpin").value;
-    fetch("http://localhost:3000/adminlogin", {
+    fetch("https://d-one-soccer.onrender.com/adminlogin", { // updated URL
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ userpin })
