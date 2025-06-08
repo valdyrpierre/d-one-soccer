@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="admin.css">
+    <script src="adminlogin.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Admin Login</h1>
+        <form id="loginForm" action="/adminlogin" method="POST">
+            <div class="form-group">
+                <label for="userpin">User PIN:</label>
+                <input type="password" id="userpin" name="userpin" required>
+            </div>
+            <div class="submit">
+                <button type="submit">Login</button>
+            </div>
+            <div class="form-group">
+                <p>Don't have an account? <a href="mailto:d.one.soccer@gmail.com">Contact your employer</a></p>
+            </div>
+        </form>
+    </div>
+</body>
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    const userpin = document.getElementById("userpin").value;
+    fetch("http://localhost:3000/adminlogin", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ userpin })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert("Login successful!");
+            window.location.href = "admin.html";
+        } else {
+            alert("The pin is wrong, if you do not have the pin please contact your employer.");
+        }
+    })
+    .catch(() => alert("Server error"));
+});
+</script>
+</html>

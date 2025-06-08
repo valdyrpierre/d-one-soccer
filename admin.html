@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin - Update Standings</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <h1>Update Team Standings</h1>
+    <form id="updateForm">
+        <p>Update the standings for the teams in the tournament. Please ensure that the data is accurate.</p>
+        
+        <label for="teamgroup">Group:</label>
+        <select id="teamgroup" name="teamgroup" required>
+            <option value="A">A</option>
+            <option value="B">B</option>
+        </select><br><br>
+
+        <label for="teamname">Team Name:</label>
+        <select id="teamname" name="teamname" required>
+            <optgroup label="Group A">
+                <option value="soley leve">soley leve</option>
+                <option value="g city">g city</option>
+                <option value="unstoppable">unstoppable</option>
+                <option value="playerclubfoundation">playerclubfoundation</option>
+                <option value="Balilfc">Balilfc</option>
+                <option value="Hulkfc">Hulkfc</option>
+                <option value="flatleyfc">flatleyfc</option>
+                <option value="Apanou">Apanou</option>
+            </optgroup>
+            <optgroup label="Group B">
+                <option value="Sete-setembro">Sete-setembro</option>
+                <option value="Anationalpanthers">Anationalpanthers</option>
+                <option value="Cafedefogo">Cafedefogo</option>
+                <option value="Unstoppablfc">Unstoppablfc</option>
+                <option value="Partnersfootballclub">Partnersfootballclub</option>
+                <option value="Retesezi">Retesezi</option>
+                <option value="broctonfc">broctonfc</option>
+            </optgroup>
+        </select><br><br>
+
+        <label for="played">Played:</label>
+        <input type="number" id="played" name="played" min="0" required><br><br>
+
+        <label for="wins">Wins:</label>
+        <input type="number" id="wins" name="wins" min="0" required><br><br>
+
+        <label for="draws">Draws:</label>
+        <input type="number" id="draws" name="draws" min="0" required><br><br>
+
+        <label for="losses">Losses:</label>
+        <input type="number" id="losses" name="losses" min="0" required><br><br>
+
+        <label for="gd">Goal Difference:</label>
+        <input type="number" id="gd" name="gd" required><br><br>
+
+        <label for="points">Points:</label>
+        <input type="number" id="points" name="points" required><br><br>
+
+        <button type="submit">Update Standings</button>
+    </form>
+
+    <script>
+    document.getElementById("updateForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        const data = {
+            teamgroup: document.getElementById("teamgroup").value,
+            teamname: document.getElementById("teamname").value,
+            played: Number(document.getElementById("played").value),
+            wins: Number(document.getElementById("wins").value),
+            draws: Number(document.getElementById("draws").value),
+            losses: Number(document.getElementById("losses").value),
+            gd: Number(document.getElementById("gd").value),
+            points: Number(document.getElementById("points").value)
+        };
+        fetch("http://localhost:3000/update-team", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(result => {
+            if (result.success) {
+                alert("Standings updated!");
+            } else {
+                alert("Update failed: " + (result.message || ""));
+            }
+        })
+        .catch(() => alert("Server error"));
+    });
+    </script>
+</body>
+</html>

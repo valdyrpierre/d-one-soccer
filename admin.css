@@ -1,0 +1,152 @@
+/* =========================
+   General Styles
+   ========================= */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #181818;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* =========================
+   Container for Forms
+   ========================= */
+.container, form {
+  max-width: 400px;
+  margin: 40px auto 0 auto;
+  background: #23272f;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  padding: 24px 18px 18px 18px;
+  box-sizing: border-box;
+}
+
+/* =========================
+   Headings
+   ========================= */
+h1, h2 {
+  text-align: center;
+  color: #ffd700;
+  margin-bottom: 18px;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+}
+
+/* =========================
+   Form Elements
+   ========================= */
+form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #ffd700;
+  font-size: 1rem;
+}
+
+form input[type="number"],
+form input[type="password"],
+form input[type="text"],
+form select {
+  width: 100%;
+  padding: 10px 8px;
+  margin-bottom: 16px;
+  border: none;
+  border-radius: 6px;
+  background: #2c2f36;
+  color: #fff;
+  font-size: 1rem;
+  box-sizing: border-box;
+  outline: none;
+  transition: background 0.2s;
+}
+
+form input:focus,
+form select:focus {
+  background: #353942;
+}
+
+form button[type="submit"] {
+  width: 100%;
+  background: linear-gradient(90deg, #ffd700, #e7bb45);
+  color: #181818;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.2s, color 0.2s;
+}
+
+form button[type="submit"]:hover {
+  background: linear-gradient(90deg, #e7bb45, #ffd700);
+  color: #000;
+}
+
+/* =========================
+   Optgroup and Option Styling
+   ========================= */
+select optgroup {
+  color: #ffd700;
+  background: #23272f;
+  font-weight: bold;
+}
+
+select option {
+  color: #181818;
+  background: #ffd700;
+}
+
+/* =========================
+   Responsive Design
+   ========================= */
+@media (max-width: 500px) {
+  .container, form {
+    max-width: 98vw;
+    padding: 14px 4vw 14px 4vw;
+  }
+  h1, h2 {
+    font-size: 1.2rem;
+  }
+  form label {
+    font-size: 0.95rem;
+  }
+  form button[type="submit"] {
+    font-size: 1rem;
+    padding: 10px 0;
+  }
+}
+
+/* =========================
+   Admin Login Page Specific
+   ========================= */
+#loginForm {
+  margin-top: 30px;
+}
+
+#loginForm .form-group {
+  margin-bottom: 18px;
+}
+
+#loginForm a {
+  color: #ffd700;
+  text-decoration: underline;
+  font-size: 0.98rem;
+}
+
+#loginForm a:hover {
+  color: #fff;
+}
+
+/* =========================
+   Miscellaneous
+   ========================= */
+input::-webkit-input-placeholder, 
+input:-ms-input-placeholder, 
+input::placeholder {
+  color: #bdbdbd;
+  opacity: 1;
+}
