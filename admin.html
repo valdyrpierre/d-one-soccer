@@ -74,7 +74,7 @@
             gd: Number(document.getElementById("gd").value),
             points: Number(document.getElementById("points").value)
         };
-        fetch("http://localhost:3000/update-team", {
+        fetch("https://d-one-soccer.onrender.com/update-team", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data)
